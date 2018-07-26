@@ -28,7 +28,7 @@ import org.jlib.container.operation.InvalidContainerArgumentException;
 import org.jlib.container.operation.InvalidContainerStateException;
 
 import org.jlib.array.ArrayUtility;
-import static org.jlib.container.iterator.IterableUtility.singletonIterable;
+import static org.jlib.container.iterator.Iterables.singletonIterable;
 
 public final class ContainsAdapterUtility {
 

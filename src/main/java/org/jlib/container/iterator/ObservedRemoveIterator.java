@@ -21,9 +21,9 @@
 
 package org.jlib.container.iterator;
 
-import org.jlib.iterator.InvalidIterableStateException;
-import org.jlib.iterator.NoItemToRemoveException;
-import org.jlib.iterator.RemoveIterator;
+import org.jlib.iterable.InvalidIterableStateException;
+import org.jlib.iterable.NoItemToRemoveException;
+import org.jlib.iterable.RemoveIterator;
 import org.jlib.operator.observer.Observer;
 import org.jlib.operator.observer.ObserverException;
 
@@ -37,7 +37,7 @@ import org.jlib.operator.observer.ObserverException;
  * @author Igor Akkerman
  */
 public interface ObservedRemoveIterator<Item>
-    extends RemoveIterator<Item> {
+extends RemoveIterator<Item> {
 
     /**
      * Removes the last traversed Item.
@@ -56,12 +56,12 @@ public interface ObservedRemoveIterator<Item>
      *         if an error occurs during the {@link Observer} operation
      *
      * @throws RuntimeException
-     *         if a {@link Observer} operation throws this
+     *         if an {@link Observer} operation throws that
      *         {@link RuntimeException}
      */
     @SuppressWarnings({ "unchecked", "DuplicateThrows" })
     void remove(Observer<Item>... observers)
-        throws NoItemToRemoveException, InvalidIterableStateException, ObserverException, RuntimeException;
+    throws NoItemToRemoveException, InvalidIterableStateException, ObserverException;
 
     /**
      * Registers the specified {@link Observer} for the remove operations

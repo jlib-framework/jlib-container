@@ -18,24 +18,18 @@
  *     See the License for the specific language governing permissions and
  *     limitations under the License.
  */
+package org.jlib.container;
 
-package org.jlib.container.operation;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 
-import org.jlib.iterable.Iterables;
+import static java.lang.annotation.ElementType.PARAMETER;
+import static java.lang.annotation.RetentionPolicy.SOURCE;
 
-public class FromIteratorIsEmpty<Item>
-    implements IsEmpty<Item> {
-
-    private final Iterable<Item> iterable;
-
-    public FromIteratorIsEmpty(final Iterable<Item> iterable) {
-
-        this.iterable = iterable;
-    }
-
-    @Override
-    public boolean isEmpty()
-        throws InvalidContainerStateException {
-        return Iterables.isEmpty(iterable);
-    }
+/**
+ * Declares a parameter to be expected to be valid and will not be verified.
+ */
+@Target(PARAMETER)
+@Retention(SOURCE)
+public @interface Valid {
 }

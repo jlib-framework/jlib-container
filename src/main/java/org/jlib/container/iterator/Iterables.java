@@ -23,11 +23,10 @@ package org.jlib.container.iterator;
 
 import java.util.Iterator;
 
-import org.jlib.iterator.BidiIterable;
-import org.jlib.iterator.InvalidIterableStateException;
-import org.jlib.iterator.RemoveIterable;
-import org.jlib.iterator.RemoveIterator;
-import org.jlib.iterator.SingletonIterable;
+import org.jlib.iterable.BidiIterable;
+import org.jlib.iterable.InvalidIterableStateException;
+import org.jlib.iterable.RemoveIterable;
+import org.jlib.iterable.SingletonIterable;
 import org.jlib.operator.observer.Observer;
 
 /**
@@ -35,29 +34,7 @@ import org.jlib.operator.observer.Observer;
  *
  * @author Igor Akkerman
  */
-public final class IterableUtility {
-
-    private IterableUtility() {}
-
-    /**
-     * Removes all Items of the specified {@link RemoveIterable}.
-     *
-     * @param iterable
-     *        {@link RemoveIterable} providing the Items
-     *
-     * @param <Item>
-     *        type of the items of {@code iterable}
-     *
-     * @throws InvalidIterableStateException
-     *         if an error occurs during one of the remove operations
-     */
-    public static <Item> void removeAll(final RemoveIterable<Item> iterable)
-        throws InvalidIterableStateException {
-        for (final RemoveIterator<Item> iterator = iterable.iterator(); iterator.hasNext(); ) {
-            iterator.next();
-            iterator.remove();
-        }
-    }
+public final class Iterables {
 
     /**
      * Removes all Items of the specified {@link RemoveIterable}.

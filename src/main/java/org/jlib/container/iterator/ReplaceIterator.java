@@ -23,7 +23,7 @@ package org.jlib.container.iterator;
 
 import java.util.Iterator;
 
-import org.jlib.iterator.InvalidIteratorStateException;
+import org.jlib.iterable.InvalidIteratorStateException;
 
 /**
  * {@link Iterator} over replaceable Items.

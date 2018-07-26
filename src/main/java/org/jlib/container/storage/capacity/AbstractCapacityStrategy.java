@@ -25,12 +25,9 @@ import org.jlib.container.storage.IndexRange;
 import org.jlib.container.storage.IndexRangeOperationDescriptor;
 import org.jlib.container.storage.InvalidStorageIndexException;
 import org.jlib.container.storage.LinearIndexStorage;
-
-import org.jlib.basefunctions.ApplicationObject;
 import static org.jlib.message.Messages.mfmessage;
 
-public abstract class AbstractCapacityStrategy
-    extends ApplicationObject {
+public abstract class AbstractCapacityStrategy {
 
     private final LinearIndexStorage<?> storage;
 

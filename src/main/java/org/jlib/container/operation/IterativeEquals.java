@@ -21,12 +21,11 @@
 
 package org.jlib.container.operation;
 
-import org.checkerframework.checker.nullness.qual.Nullable;
-import org.jlib.basefunctions.Equals;
-import static org.jlib.iterator.Iterables.provideEqualItems;
+import org.jlib.container.basefunction.Equals;
+import static org.jlib.iterable.Iterables.provideEqualItems;
 
 public final class IterativeEquals<Item>
-    implements Equals<Iterable<Item>> {
+implements Equals<Iterable<Item>> {
 
     private static final IterativeEquals<?> INSTANCE = new IterativeEquals<>();
 
@@ -39,7 +38,7 @@ public final class IterativeEquals<Item>
 
     @Override
     @SuppressWarnings("unchecked")
-    public boolean areEqual(final Iterable<Item> iterable1, @Nullable final Object iterable2) {
+    public boolean areEqual(final Iterable<Item> iterable1, /* @Nullable */ final Object iterable2) {
         return iterable2 instanceof Iterable<?> && //
                provideEqualItems(iterable1, (Iterable<Item>) iterable2);
     }

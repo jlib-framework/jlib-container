@@ -23,47 +23,59 @@ package org.jlib.container.storage.array;
 
 import org.jlib.container.storage.InvalidStorageCapacityException;
 import org.jlib.container.storage.InvalidStorageIndexException;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 public class ArrayStorageTest {
 
-    public void zeroCapacityStorageShouldReturnCorrectCapacity()
-        throws Exception {
+    @Test
+    public void zeroCapacityStorageShouldReturnCorrectCapacity() {
         final ArrayStorage<Integer> storage = new ArrayStorage<>(0);
 
         assertThat(storage.capacity()).isEqualTo(0);
     }
 
-    public void positiveCapacityStorageShouldReturnCorrectCapacity()
-        throws Exception {
+    @Test
+    public void positiveCapacityStorageShouldReturnCorrectCapacity() {
         final ArrayStorage<Integer> storage = new ArrayStorage<>(5);
 
         assertThat(storage.capacity()).isEqualTo(5);
     }
 
-    @Test(expected = InvalidStorageCapacityException.class)
-    public void negativeCapacityStorageReadShouldThrowException()
-        throws Exception {
-        new ArrayStorage<>(- 1);
-    }
+    @Test
+    public void negativeCapacityStorageReadShouldThrowException() {
+        Throwable thrown = catchThrowable(() ->
+                new ArrayStorage<>(-1)
+        );
 
-    @Test(expected = InvalidStorageIndexException.class)
-    public void zeroCapacityStorageReadShouldThrowException()
-        throws Exception {
-        new ArrayStorage<Integer>(0).get(0);
-    }
-
-    @Test(expected = InvalidStorageIndexException.class)
-    public void readNegativeIndexShouldThrowException()
-        throws Exception {
-        new ArrayStorage<Integer>(5).get(- 1);
+        assertThat(thrown)
+                .isInstanceOf(InvalidStorageCapacityException.class);
     }
 
     @Test
-    public void getPreviouslySetItemShouldReturnCorrectItem()
-        throws Exception {
+    public void zeroCapacityStorageReadShouldThrowException() {
+        Throwable thrown = catchThrowable(() ->
+                new ArrayStorage<Integer>(0).get(0)
+        );
+
+        assertThat(thrown)
+                .isInstanceOf(InvalidStorageIndexException.class);
+    }
+
+    @Test
+    public void readNegativeIndexShouldThrowException() {
+        Throwable thrown = catchThrowable(() ->
+                new ArrayStorage<Integer>(5).get(-1)
+        );
+
+        assertThat(thrown)
+                .isInstanceOf(InvalidStorageIndexException.class);
+    }
+
+    @Test
+    public void getPreviouslySetItemShouldReturnCorrectItem() {
         final ArrayStorage<String> storage = new ArrayStorage<>(5);
         storage.set(3, "Test");
 
@@ -71,8 +83,7 @@ public class ArrayStorageTest {
     }
 
     @Test
-    public void getReplacedItemShouldReturnCorrectItem()
-        throws Exception {
+    public void getReplacedItemShouldReturnCorrectItem() {
         final ArrayStorage<String> storage = new ArrayStorage<>(5);
         storage.set(3, "Test");
         storage.set(3, "new");
@@ -82,29 +93,25 @@ public class ArrayStorageTest {
 
     @SuppressWarnings("EmptyMethod")
     @Test
-    public void testShiftItems()
-        throws Exception {
+    public void testShiftItems() {
         // TODO: implement
     }
 
     @SuppressWarnings("EmptyMethod")
     @Test
-    public void testCopyItems()
-        throws Exception {
+    public void testCopyItems() {
         // TODO: implement
     }
 
     @SuppressWarnings("EmptyMethod")
     @Test
-    public void testGetCapacity()
-        throws Exception {
+    public void testGetCapacity() {
         // TODO: implement
     }
 
     @SuppressWarnings("EmptyMethod")
     @Test
-    public void testEnsureCapacityAndShiftItems()
-        throws Exception {
+    public void testEnsureCapacityAndShiftItems() {
         // TODO: implement
     }
 }

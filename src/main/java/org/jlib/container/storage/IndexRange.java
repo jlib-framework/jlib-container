@@ -23,9 +23,9 @@ package org.jlib.container.storage;
 
 import java.io.Serializable;
 
+import org.jlib.container.Valid;
 import org.jlib.exception.UnexpectedStateException;
-import static org.jlib.shared.NumericUtility.count;
-import org.jlib.shared.Valid;
+import static org.jlib.numeric.Numeric.countInclusive;
 
 /**
  * Modifiable {@link Integer} index range.
@@ -71,7 +71,7 @@ public class IndexRange
     }
 
     public int itemsCount() {
-        return count(minimum, maximum);
+        return countInclusive(minimum, maximum);
     }
 
     @Override

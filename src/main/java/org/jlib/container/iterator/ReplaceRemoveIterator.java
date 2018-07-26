@@ -21,7 +21,7 @@
 
 package org.jlib.container.iterator;
 
-import org.jlib.iterator.RemoveIterator;
+import org.jlib.iterable.RemoveIterator;
 
 /**
  * {@link ReplaceIterator} and {@link RemoveIterator}.

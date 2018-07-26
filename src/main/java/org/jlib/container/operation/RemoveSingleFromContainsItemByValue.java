@@ -35,7 +35,7 @@ public interface RemoveSingleFromContainsItemByValue<Item>
 
     /**
      * Removes all Items from this object for which the specified {@link ContainsSingle}'s
-     * {@link ContainsSingle#contains(Item)} method returns {@code true}.
+     * {@link ContainsSingle#contains(Object)} method returns {@code true}.
      *
      * @param item
      *        {@link Item} to remove

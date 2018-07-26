@@ -26,8 +26,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.jlib.container.operation.containsadapter.IterativeContainsAdapter;
-
-import org.jlib.basefunctions.ApplicationObject;
 import org.jlib.operator.observer.Observer;
 import org.jlib.operator.observer.ObserverException;
 
@@ -41,7 +39,6 @@ import org.jlib.operator.observer.ObserverException;
  * @author Igor Akkerman
  */
 public class ForwardingAlmightyContainer<Item>
-    extends ApplicationObject
     implements AlmightyContainer<Item> {
 
     private final AlmightyContainer<Item> disabledAlmightyContainer = new AlmightyContainer<Item>() {

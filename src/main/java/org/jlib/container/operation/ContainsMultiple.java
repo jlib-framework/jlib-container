@@ -29,6 +29,9 @@ public interface ContainsMultiple<Item> {
      * @param items
      *        {@link Item}s to verify
      *
+     * @param <ContainsIterable>
+     *        type of the {@link Iterable} and {@link ContainsSingle} to inspect
+     *
      * @return {@code true} if this {@link Object} containsItem {@code object};
      *         {@code false} otherwise
      *

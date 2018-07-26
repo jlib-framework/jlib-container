@@ -19,23 +19,19 @@
  *     limitations under the License.
  */
 
-package org.jlib.container.operation;
+package org.jlib.container.basefunction;
 
-import org.jlib.iterable.Iterables;
+@FunctionalInterface
+public interface HashCode<Obj> {
 
-public class FromIteratorIsEmpty<Item>
-    implements IsEmpty<Item> {
-
-    private final Iterable<Item> iterable;
-
-    public FromIteratorIsEmpty(final Iterable<Item> iterable) {
-
-        this.iterable = iterable;
-    }
-
-    @Override
-    public boolean isEmpty()
-        throws InvalidContainerStateException {
-        return Iterables.isEmpty(iterable);
-    }
+    /**
+     * Computes a hash code of the specified {@link Obj}.
+     * The algorithm used for the computation is specified by the concrete implementation.
+     *
+     * @param object
+     *        {@link Obj} of which the hash code should be computed
+     *
+     * @return integer specifying the hash code
+     */
+    int hashCode(Obj object);
 }

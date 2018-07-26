@@ -21,17 +21,16 @@
 
 package org.jlib.container.storage.array;
 
+import static java.lang.System.arraycopy;
+import static java.util.Arrays.copyOf;
+import static org.jlib.array.ArrayUtility.array;
+import org.jlib.container.Valid;
 import org.jlib.container.storage.AbstractLinearIndexStorage;
 import org.jlib.container.storage.IndexRangeOperationDescriptor;
 import org.jlib.container.storage.InvalidStorageCapacityException;
 import org.jlib.container.storage.InvalidStorageIndexException;
 import org.jlib.container.storage.LinearIndexStorage;
-
-import static java.lang.System.arraycopy;
-import static java.util.Arrays.copyOf;
-import static org.jlib.array.ArrayUtility.array;
-import static org.jlib.shared.NumericUtility.count;
-import org.jlib.shared.Valid;
+import static org.jlib.numeric.Numeric.countInclusive;
 
 /**
  * {@link LinearIndexStorage} based on an array.
@@ -112,7 +111,7 @@ public class ArrayStorage<Item>
 
         arraycopy(sourceArray, copyDescriptor.getSourceRange().getMinimum(), targetArray,
                   copyDescriptor.getTargetIndex(),
-                  count(copyDescriptor.getSourceRange().getMinimum(), copyDescriptor.getSourceRange().getMaximum()));
+                  countInclusive(copyDescriptor.getSourceRange().getMinimum(), copyDescriptor.getSourceRange().getMaximum()));
     }
 
     @Override

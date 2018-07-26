@@ -19,23 +19,9 @@
  *     limitations under the License.
  */
 
-package org.jlib.container.operation;
+package org.jlib.container.basefunction;
 
-import org.jlib.iterable.Iterables;
+public interface ToString<Obj> {
 
-public class FromIteratorIsEmpty<Item>
-    implements IsEmpty<Item> {
-
-    private final Iterable<Item> iterable;
-
-    public FromIteratorIsEmpty(final Iterable<Item> iterable) {
-
-        this.iterable = iterable;
-    }
-
-    @Override
-    public boolean isEmpty()
-        throws InvalidContainerStateException {
-        return Iterables.isEmpty(iterable);
-    }
+    String toString(Obj object);
 }

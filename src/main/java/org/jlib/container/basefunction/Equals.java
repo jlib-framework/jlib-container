@@ -19,23 +19,23 @@
  *     limitations under the License.
  */
 
-package org.jlib.container.operation;
+package org.jlib.container.basefunction;
 
-import org.jlib.iterable.Iterables;
+@FunctionalInterface
+public interface Equals<Obj> {
 
-public class FromIteratorIsEmpty<Item>
-    implements IsEmpty<Item> {
-
-    private final Iterable<Item> iterable;
-
-    public FromIteratorIsEmpty(final Iterable<Item> iterable) {
-
-        this.iterable = iterable;
-    }
-
-    @Override
-    public boolean isEmpty()
-        throws InvalidContainerStateException {
-        return Iterables.isEmpty(iterable);
-    }
+    /**
+     * Verifies whether the specified object1 {@link Obj} is equal to the specified object2 {@link Object}.
+     * When two values are called equal is defined by the concrete implementation of this interface.
+     *
+     * @param object1
+     *        object1 {@link Obj}
+     *
+     * @param object2
+     *        object2 {@link Object}
+     *
+     * @return {@code true} if all of the conditions stated above are satisfied;
+     *         {@code false} otherwise
+     */
+    boolean areEqual(Obj object1,  /* @Nullable */ Object object2);
 }

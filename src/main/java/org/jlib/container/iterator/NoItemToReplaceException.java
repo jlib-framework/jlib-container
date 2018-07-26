@@ -23,7 +23,7 @@ package org.jlib.container.iterator;
 
 import java.util.Iterator;
 
-import org.jlib.iterator.InvalidIteratorStateException;
+import org.jlib.iterable.InvalidIteratorStateException;
 
 /**
  * {@link InvalidIteratorStateException} thrown when there is Item to remove by

@@ -19,7 +19,6 @@
  *     limitations under the License.
  */
 
-
 plugins {
     id 'java'
     id 'base'
@@ -29,5 +28,22 @@ plugins {
     id 'net.researchgate.release' version '2.6.0'
 }
 
+version = '1.0.0-SNAPSHOT'
+
+description = 'jlib container framework'
+ext.detailedDescription = 'jlib framework providing clean data structures extending or replacing JDK collections'
+
 apply from: 'jlib.gradle'
 
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'org.jlib:jlib-iterable:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-array:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-operator:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-numeric:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-exception:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-message:1.0.0-SNAPSHOT'
+}

@@ -21,8 +21,6 @@
 
 package org.jlib.container.operation;
 
-import org.checkerframework.checker.nullness.qual.Nullable;
-
 public class EqualCount<Item> {
 
     private static final EqualCount<?> INSTANCE = new EqualCount<>();
@@ -34,7 +32,7 @@ public class EqualCount<Item> {
         return (EqualCount<Item>) INSTANCE;
     }
 
-    public boolean haveEqualCount(final Count<Item> thisObject, @Nullable final Object otherObject) {
+    public boolean haveEqualCount(final Count<Item> thisObject, /* @Nullable */ final Object otherObject) {
         return otherObject instanceof Count<?> && //
                thisObject.count() == ((Count<?>) otherObject).count();
     }

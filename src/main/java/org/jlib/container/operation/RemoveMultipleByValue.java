@@ -38,6 +38,9 @@ public interface RemoveMultipleByValue<Item> {
      * @param items
      *        {@link Object} containing the Items to remove
      *
+     * @param <ContainsIterable>
+     *        type of the {@link Iterable} and {@link ContainsSingle} to inspect
+     *
      * @throws InvalidContainerArgumentException
      *         if the operation cannot be completed due to some property of one
      *         Item in {@code items}

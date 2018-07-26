@@ -24,7 +24,7 @@ package org.jlib.container.operation.containsadapter;
 import org.jlib.container.operation.InvalidContainerArgumentException;
 import org.jlib.container.operation.InvalidContainerStateException;
 
-import org.jlib.iterator.Iterables;
+import org.jlib.iterable.Iterables;
 
 public class IterativeContainsAdapter<Item>
     extends ContainsAdapter<Item> {

@@ -21,7 +21,7 @@
 
 package org.jlib.container.iterator;
 
-import org.jlib.iterator.RemoveIterable;
+import org.jlib.iterable.RemoveIterable;
 
 /**
  * Object providing  allowing Items to be removed.
