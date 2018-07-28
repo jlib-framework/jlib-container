@@ -33,16 +33,11 @@ ext.detailedDescription = 'jlib framework providing clean data structures extend
 
 apply from: 'jlib.gradle'
 
-repositories {
-    mavenLocal()
-}
-
 dependencies {
-    implementation 'org.jlib:jlib-iterable:1.0.0-SNAPSHOT'
-    implementation 'org.jlib:jlib-array:1.0.0-SNAPSHOT'
-    implementation 'org.jlib:jlib-operator:1.0.0-SNAPSHOT'
-    implementation 'org.jlib:jlib-numeric:1.0.0-SNAPSHOT'
-    implementation 'org.jlib:jlib-exception:1.0.0-SNAPSHOT'
-    implementation 'org.jlib:jlib-message:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-iterable:1.0.0'
+    implementation 'org.jlib:jlib-array:1.0.0'
+    implementation 'org.jlib:jlib-operator:1.0.0'
+    implementation 'org.jlib:jlib-numeric:1.0.0'
+    implementation 'org.jlib:jlib-exception:1.0.0'
+    implementation 'org.jlib:jlib-message:1.0.0'
 }
-
